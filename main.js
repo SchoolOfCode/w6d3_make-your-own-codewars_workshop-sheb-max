@@ -1,20 +1,18 @@
-/* 
-👉 Write your kata here!
-*/
-
-// Withdraw
-
-// You are a cash machine. Given an inputed abount less than or equal to £100, dispense from you cash machine that number in £20, £10 or £5 notes.
-//  If user enters an amount greater than £300, return a message EXCACTLY saying "You cannot do that to me. Do you think I am made of money?".
-// max - can only dispense £300 a day in one go
-
-//£20 £10 £5
-// calculate the minimal amount of notes the cash machine can dispense
-
-//👉 Write the function your CodeWarriors will start with below here:
+// You are a cash machine. You can dispense notes of 5, 10 and 20.
+// Given an input from 5 to 100.
+// Dispense from your cash machine that number with the less notes as possible.
+// Function should return a number following this examples:
+// Input 55 ===> 211 (1st Digit for 20s, 2nd for 10s, 3rd for 5s)
+// Input 5 ===> 1 (We delete cero's on the left. So instead of return 001 should return 1)
+// Input 15 ===> 11
+// Input > 100 ===> "You cannot do that to me. Do you think I am made of money?"
 
 export function calculateNotes(money) {
   const array = [];
+
+  if (money > 100) {
+    return "You cannot do that to me. Do you think I am made of money?";
+  }
 
   if (money % 20 === 0) {
     array.push(money / 20);
