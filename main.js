@@ -7,34 +7,4 @@
 // Input 15 ===> 11
 // Input > 100 ===> "You cannot do that to me. Do you think I am made of money?"
 
-export function calculateNotes(money) {
-  const array = [];
-
-  if (money > 100) {
-    return "You cannot do that to me. Do you think I am made of money?";
-  }
-
-  if (money % 20 === 0) {
-    array.push(money / 20);
-    array[1] = 0;
-    array[2] = 0;
-  } else if (money % 20 !== 0 && money % 10 === 0) {
-    //Calculate how many 20s and push into the array
-    let twenties = Math.floor(money / 20);
-    array.push(twenties);
-    //Calculate the 10s
-    let tens = (money % 20) / 10;
-    array.push(tens);
-    array[2] = 0;
-  } else {
-    //Calculate how many 20s and push into the array
-    let twenties = Math.floor(money / 20);
-    array.push(twenties);
-    //Calculate the 10s
-    let tens = Math.floor((money - 20 * twenties) / 10);
-    array.push(tens);
-    array[2] = 1;
-  }
-
-  return Number(array.join(""));
-}
+export function calculateNotes(money) {}
